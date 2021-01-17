@@ -1,0 +1,86 @@
+﻿
+@font-face {
+    src: url("fonts/Mj flow.ttf");
+    font-family: mj;
+}
+
+@font-face {
+    src: url("fonts/Mitra.ttf");
+    font-family: mitra;
+}
+
+body {
+    margin: 0;
+}
+
+#accardion {
+    border: 1px solid #ccc;
+    margin:0;
+    //width: 400px;
+    padding: 5px;
+    list-style: none;
+    font-family: mj;
+    direction: rtl;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 1px #ccc;
+    background: rgba(240,240,240,1);
+}
+
+    #accardion > li {
+        background: #fff;
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+
+        #accardion > li:last-child {
+            margin: 0;
+        }
+
+        #accardion > li > input {
+            display: none;
+        }
+
+            #accardion > li > input:checked + label {
+                background-color: orange;
+            }
+
+            #accardion > li > input:checked ~ .content {
+                height: 100px;
+            }
+
+        #accardion > li > label {
+            color: #fff;
+            padding: 2px 35px 2px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            background: url('../images/339w.png') #999 no-repeat 95% 50%;
+            background-size: 20px;
+        }
+
+        #accardion > li > .content {
+            transition: 0.5s;
+            overflow: hidden;
+            height: 0px;
+            padding-top: 5px;
+        }
+
+
+
+
+
+
+            #accardion > li > .content > a {
+                display: block;
+                text-align: center;
+                text-decoration: none;
+                font-family: mitra;
+                line-height: 31px;
+                color: #555;
+                background: rgba(240,240,240,1);
+                margin-top: 3px;
+            }
+
+                #accardion > li > .content > a:hover {
+                    background: rgba(220,220,220,1);
+                    border-right: 5px solid orange;
+                }

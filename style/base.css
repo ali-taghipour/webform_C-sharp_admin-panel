@@ -1,0 +1,26 @@
+﻿body {
+    margin:0;
+    padding:0;
+}
+#header{
+    height:150px;
+    background:linear-gradient(rgba(250,250,250,1),rgba(240,240,240,1));
+    box-shadow:0 0 10px 1px #ccc;
+    border-bottom:1px solid #ccc;
+    position:relative;
+    z-index:1;
+}
+#content {
+    //height: 1200px;
+    background: url('../images/bg/01 bg.png') repeat-x;
+    border-top:0.1px solid transparent;
+}
+#footer {
+    height: 200px;
+    background:#999;
+    border-top:7px solid #ccc;
+}
+
+
+
+

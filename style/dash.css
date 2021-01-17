@@ -1,0 +1,82 @@
+﻿.dash {
+    overflow: hidden;
+    background: #fff;
+    direction: rtl;
+    font-family: mj;
+    margin: 3px;
+    padding-right: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+.dash > h2 {
+    margin: 0 auto;
+    width: 70%;
+    background: rgba(235,235,235,1);
+    text-align: center;
+    font-family: tul;
+    color: #333;
+    padding: 10px 0;
+    border-radius: 0 0 100% 100%;
+}
+
+.dash > .items {
+    width: 140px;
+    // border:1px solid #ccc;
+    float: right;
+    margin: 13px;
+    background: rgba(235,235,235,1);
+    text-align: center;
+    border-radius: 5px;
+}
+
+    .dash > .items > .header {
+        background: #fff;
+        margin: 7px;
+        padding-top: 10PX;
+    }
+
+        .dash > .items > .header > .pic {
+            transition: 0.3s;
+            display: block;
+            width: 90px;
+            height: 90px;
+            background: orange url("../images/icons/208w.png") no-repeat 50%;
+            background-size: 50px;
+            border-radius: 100%;
+            margin: auto;
+        }
+
+        .dash > .items > .header > h2 {
+            font-weight: 500;
+            color: #555;
+            margin: 10px;
+        }
+
+
+        .dash > .items > .header > a {
+            background: #fff;
+            display: block;
+            text-decoration: none;
+            margin: 0 7px;
+            color: #555;
+            line-height: 40px;
+            border-top: 2px dashed #ccc;
+        }
+
+    .dash > .items:nth-of-type(2) > .header > .pic {
+        background: orange url("../images/icons/29w.png") no-repeat 50%;
+        background-size: 50px;
+    }
+
+    .dash > .items:nth-of-type(3) > .header > .pic {
+        background: orange url("../images/icons/106w.png") no-repeat 50%;
+        background-size: 50px;
+    }
+
+
+
+    .dash > .items:hover .pic {
+        transform: scale(1.2);
+    }

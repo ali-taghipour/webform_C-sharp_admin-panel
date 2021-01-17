@@ -1,0 +1,81 @@
+﻿#content {
+    background: url('../images/lfwHPQ.jpg') no-repeat;
+    background-size: 100%;
+    margin-bottom: 0;
+}
+
+    #content > .holder {
+        width: 500px;
+    }
+
+#footer {
+    background: #ffffff;
+    padding-top: 0;
+}
+
+#content > .holder > .center {
+    width: 100%;
+    margin: 100px auto;
+}
+
+    #content > .holder > .center > .form {
+        width: 94%;
+        background: linear-gradient(84deg,#9d5757 33%,white 33%,white 70%,#ff6a00 70%);
+    }
+
+        #content > .holder > .center > .form > .logo {
+            width: 100px;
+            display: block;
+            margin: 10px auto;
+        }
+
+.form > h2 {
+    background: #b6ff00;
+}
+
+.form > .items {
+    width: 80%;
+    margin: 10px auto;
+    background: transparent;
+    border: 0.25px solid #ccc;
+    border-radius: 10%;
+}
+
+    .form > .items > .title {
+        background: #b6ff00;
+    }
+
+    .form > .items > input {
+        width: 74%;
+        padding: 0;
+    }
+
+        .form > .items > input:hover {
+            transition: 0.5s;
+            transform: translateX(0px);
+        }
+
+        .form > .items > input[type=submit] {
+            background: aqua;
+            padding-left:65px;
+            text-indent:42px;
+            color:black;
+        }
+
+.form > a {
+    color: red;
+    font-family: mj;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    width:70%;
+    margin:0 auto;
+    margin-bottom:5px;
+    padding: 10px;
+    border: 0.25px solid #ccc;
+    border-radius: 10%;
+    opacity:0.5;
+}
+.form > a:hover{
+    opacity:1;
+}

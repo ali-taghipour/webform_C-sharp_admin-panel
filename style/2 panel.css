@@ -1,0 +1,33 @@
+﻿#content > .holder{
+    width:1000px;
+    //border:1px solid #ccc;
+    margin:30px auto;
+    overflow:hidden;
+}
+#content > .holder > .right{
+    width: 23%;
+   // border:1px solid #ccc;
+    float:right;
+    height:800px;
+}
+#content > .holder > .center{
+    width: 73.3%;
+   // border:1px solid #ccc;
+    float:left;
+    //height:1100px;
+
+    background:rgba(240,240,240,1);
+    border-radius:5px;
+    padding:10px;
+}
+
+
+
+
+
+
+
+
+
+
+

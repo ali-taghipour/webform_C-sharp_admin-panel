@@ -1,0 +1,53 @@
+﻿#header > .top{
+    height:40px;
+    border-bottom:1px solid #ddd;
+    background:#ffffff;
+}
+#header > .top > .holder {
+    position:relative;
+    width:1000px;
+    margin:auto;
+    direction:rtl;
+}
+#header > .top > .holder > a.home{
+    position:absolute;
+    top:20px;
+    left:20px;
+    background:#ffffff;
+    border-radius:100%;
+    padding:15px;
+}
+#header > .top > .holder > a.home > img{
+    width:37px;
+}
+#header > .top > .holder > img{
+    width:73px;
+    background:#ffffff;
+    border:1px solid #ccc;
+    border-radius:3px;
+    padding:13px;
+    margin:20px;
+    box-shadow:0 0 10px 1px #ccc;
+}
+#header > .top > .holder > h2{
+    position:absolute;
+    right:140px;
+    top:30px;
+    font-family:mj;
+    color:#555;
+    font-weight:500;
+}
+#header > .top > .holder > .wel{
+    top:73px;
+    font-size:21px;
+}
+#header > .top > .holder > .wel > span{
+    color:chartreuse;
+}
+
+
+
+
+
+
+
