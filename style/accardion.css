@@ -44,7 +44,8 @@ body {
                 background-color: orange;
             }
 
-            #accardion > li > input:checked ~ .content {
+            #accardion > li > input:checked ~ .content,
+            #accardion > li.sel > .content {
                 height: 100px;
             }
 
@@ -80,7 +81,8 @@ body {
                 margin-top: 3px;
             }
 
-                #accardion > li > .content > a:hover {
+                #accardion > li > .content > a:hover,
+                #accardion > li > .content > a.sel {
                     background: rgba(220,220,220,1);
                     border-right: 5px solid orange;
                 }

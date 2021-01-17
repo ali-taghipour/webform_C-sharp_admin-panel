@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\App_Data"
+    "\\admin",
+    "\\user"
   ],
-  "SelectedNode": "\\log.aspx.cs",
+  "SelectedNode": "\\log.aspx",
   "PreviewInSolutionExplorer": false
 }

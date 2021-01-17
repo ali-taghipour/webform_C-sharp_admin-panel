@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Globalization;
 
+using System.Globalization;
 /// <summary>
 /// Summary description for myDate
 /// </summary>
@@ -11,22 +11,24 @@ public class myDate
 {
     public myDate()
     {
+        
 
     }
-    public static int getDate()
+
+    public static int get_date()
     {
+        // calender
 
         DateTime mil = DateTime.Today;
 
         PersianCalendar shamsi = new PersianCalendar();
 
-        int y = shamsi.GetYear(mil);
-        int m = shamsi.GetMonth(mil);
-        int d = shamsi.GetDayOfMonth(mil);
+        int year = shamsi.GetYear(mil);
+        int month = shamsi.GetMonth(mil);
+        int day = shamsi.GetDayOfMonth(mil);
 
-        int sha = y * 10000 + m * 100 + d;
+        int sham = year * 10000 + month * 100 + day;
 
-        return sha;
+        return sham;
     }
-
 }

@@ -3,69 +3,56 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-
 using System.Web.Configuration;
-using System.Text.RegularExpressions;
+using System.Web.UI.WebControls;
 
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 
 using System.IO;
+using System.Globalization;
 
 public partial class sign : System.Web.UI.Page
 {
-    string cs = WebConfigurationManager.ConnectionStrings["all"].ConnectionString;
+    string ct = WebConfigurationManager.ConnectionStrings["all"].ConnectionString;
     protected void Page_Load(object sender, EventArgs e)
     {
-     
+
     }
+
     protected void sign_click(object sender, EventArgs e)
     {
-        string r1 = @"/^.{8,}$/";
-        string r2 = @"/[A-Z]/";
-        string r3 = @"/\d/";
+        SqlConnection con = new SqlConnection(ct);
+        SqlCommand cmd = new SqlCommand("account_insert", con);
 
-        if (!Regex.IsMatch(sign_pass.Value,r1) || !Regex.IsMatch(sign_pass.Value, r2) || !Regex.IsMatch(sign_pass.Value, r3))
-        {
-            error.InnerHtml = "فرمت نادرست است ...";
-            return;
-        }
-
-        if (!Regex.IsMatch(sign_pass.Value, sign_repass.Value)){
-            error.InnerHtml = "به هم نمی خورند ...";
-            return;
-        }
-
-        SqlConnection con = new SqlConnection(cs);
-        SqlCommand cmd = new SqlCommand("account_insert",con);
         cmd.CommandType = CommandType.StoredProcedure;
 
         cmd.Parameters.AddWithValue("@uname", sign_uname.Value);
-        cmd.Parameters.AddWithValue("@pass", sign_pass.Value);
+        cmd.Parameters.AddWithValue("@upass", myFile.hash(sign_pass.Value));
 
         cmd.Parameters.Add("@retvalue", SqlDbType.Int).Direction = ParameterDirection.Output;
 
-        try {
+        try
+        {
             con.Open();
             cmd.ExecuteNonQuery();
 
-            int result = (int)cmd.Parameters["@retvalue"].Value;
+            int retvalue = (int)cmd.Parameters["@retvalue"].Value;
 
-            if(result == 1)
+            if (retvalue == 1)
             {
-                error.InnerHtml = "ثبت موفقیت آمیز";
+                error.InnerHtml = "submit seccessfully";
             }
-            else if(result == 0)
+            else if (retvalue == 0)
             {
-                error.InnerHtml = "نام کاربری تکراری است";
+                error.InnerHtml = "the username is exist";
             }
         }
-        //catch { }
-        finally {
+        //catch (Exception) { }
+        finally
+        {
             con.Close();
-        }    
+        }
     }
-
 }

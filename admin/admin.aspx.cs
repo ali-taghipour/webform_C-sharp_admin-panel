@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
 using System.Web.Configuration;
 
 using System.Data;
@@ -12,53 +11,61 @@ using System.Data.SqlClient;
 using System.Data.SqlTypes;
 
 using System.IO;
+using System.Globalization;
 
 public partial class admin_admin : System.Web.UI.Page
 {
-    string cs = WebConfigurationManager.ConnectionStrings["all"].ConnectionString;
+    string ct = WebConfigurationManager.ConnectionStrings["all"].ConnectionString;
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["usid"] == null)
+        if (Session["userid"] == null)
         {
             Response.Redirect("~/log.aspx");
         }
         else
         {
-            show_info();
+            show();
         }
     }
-    void show_info()
+
+    void show()
     {
-        string uid = Session["usid"].ToString();
+        string uid = Session["userid"].ToString();
 
-        SqlConnection con = new SqlConnection(cs);
+    
+
+        SqlConnection con = new SqlConnection(ct);
         SqlCommand cmd = new SqlCommand("select fname,lname,uname,sex,pic from account where id=@uid",con);
-
-        cmd.Parameters.AddWithValue("@uid",uid);
-
+        cmd.Parameters.AddWithValue("@uid", uid);
+  
         SqlDataReader reader;
 
-        try {
+        try
+        {
             con.Open();
             reader = cmd.ExecuteReader();
             reader.Read();
-            string user_sex = "";
+
+            string sex = "";
 
             if (reader["sex"].ToString() == "NULL")
             {
-               user_sex = "";
-            }
-            else
-            {
-                user_sex = (bool)reader["sex"] ? "آقای" : "خانم";
+                sex = "";
             }
 
-            string full_name = reader["fname"] + " " + reader["lname"] + " " + "(" + reader["uname"] + ")";
+            else {
+                sex = "آقای";
+            }
 
-            wel.InnerHtml = user_sex + " " + full_name;
+            string full_name = reader["fname"] + " " + reader["lname"] + " ( " + reader["uname"] + " ) ";
+
+            wel.InnerHtml = sex + full_name;
         }
-        //catch { }
-        finally {
+
+        ////catch(Exception) { }
+
+        finally
+        {
             con.Close();
         }
     }
